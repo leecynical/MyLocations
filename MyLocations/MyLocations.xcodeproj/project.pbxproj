@@ -14,6 +14,10 @@
 		07E97D811B0ACD1900F4A946 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E97D801B0ACD1900F4A946 /* Images.xcassets */; };
 		07E97D841B0ACD1900F4A946 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E97D821B0ACD1900F4A946 /* LaunchScreen.xib */; };
 		07E97D901B0ACD1900F4A946 /* MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E97D8F1B0ACD1900F4A946 /* MyLocationsTests.swift */; };
+		07E97D9A1B0C454D00F4A946 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E97D991B0C454D00F4A946 /* LocationDetailsViewController.swift */; };
+		07EC893B1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */; };
+		07EC893D1B0F6A4A00F2D6CF /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC893C1B0F6A4A00F2D6CF /* HudView.swift */; };
+		07EC89761B1360A400F2D6CF /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC89751B1360A400F2D6CF /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		07E97D891B0ACD1900F4A946 /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E97D8E1B0ACD1900F4A946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E97D8F1B0ACD1900F4A946 /* MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationsTests.swift; sourceTree = "<group>"; };
+		07E97D991B0C454D00F4A946 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		07EC893C1B0F6A4A00F2D6CF /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		07EC89751B1360A400F2D6CF /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 				07E97D791B0ACD1900F4A946 /* CurrentLocationController.swift */,
 				07E97D7B1B0ACD1900F4A946 /* SecondViewController.swift */,
 				07E97D7D1B0ACD1900F4A946 /* Main.storyboard */,
+				07E97D991B0C454D00F4A946 /* LocationDetailsViewController.swift */,
+				07EC893C1B0F6A4A00F2D6CF /* HudView.swift */,
+				07EC89751B1360A400F2D6CF /* Functions.swift */,
+				07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */,
 				07E97D801B0ACD1900F4A946 /* Images.xcassets */,
 				07E97D821B0ACD1900F4A946 /* LaunchScreen.xib */,
 				07E97D751B0ACD1900F4A946 /* Supporting Files */,
@@ -215,8 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E97D9A1B0C454D00F4A946 /* LocationDetailsViewController.swift in Sources */,
 				07E97D7C1B0ACD1900F4A946 /* SecondViewController.swift in Sources */,
+				07EC893D1B0F6A4A00F2D6CF /* HudView.swift in Sources */,
+				07EC89761B1360A400F2D6CF /* Functions.swift in Sources */,
 				07E97D781B0ACD1900F4A946 /* AppDelegate.swift in Sources */,
+				07EC893B1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift in Sources */,
 				07E97D7A1B0ACD1900F4A946 /* CurrentLocationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +429,7 @@
 				07E97D951B0ACD1900F4A946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07E97D961B0ACD1900F4A946 /* Build configuration list for PBXNativeTarget "MyLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +438,7 @@
 				07E97D981B0ACD1900F4A946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

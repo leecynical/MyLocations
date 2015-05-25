@@ -32,6 +32,15 @@ class CurrentLocationController: UIViewController, CLLocationManagerDelegate {
     
     var timer: NSTimer?
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TagLocation"{
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+        }
+    }
+    
     func stopLocationManager(){
         if updatingLocation{
             if let timer = timer {
