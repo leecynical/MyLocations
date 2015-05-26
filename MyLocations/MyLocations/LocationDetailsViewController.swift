@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -30,6 +31,9 @@ class LocationDetailsViewController: UITableViewController {
         return formatter
     }()
     
+    var managedObjectContext: NSManagedObjectContext!
+    var date = NSDate()
+    
     //MARK: unwind segue
     
     @IBAction func categoryPickerViewController(segue: UIStoryboardSegue){
@@ -42,6 +46,22 @@ class LocationDetailsViewController: UITableViewController {
     @IBAction func done(sender: AnyObject) {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
         hudView.text = "Tagged"
+        
+        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        
+        location.locationDescription = descriptionText
+        location.longitude = coordinate.longitude
+        location.latitude = coordinate.latitude
+        location.date = date
+        location.placemark = placemark
+        location.category = categoryName
+        
+        var error: NSError?
+        if !managedObjectContext.save(&error){
+            fatalCoreDataError(error)
+            return
+        }
+        
         afterDelay(0.6){
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -65,7 +85,7 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Address Found"
         }
         
-        dateLabel.text = formateDate(NSDate())
+        dateLabel.text = formateDate(date)
         
         let gestureRecongizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
         gestureRecongizer.cancelsTouchesInView = false

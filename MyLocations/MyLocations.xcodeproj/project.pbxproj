@@ -18,6 +18,8 @@
 		07EC893B1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */; };
 		07EC893D1B0F6A4A00F2D6CF /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC893C1B0F6A4A00F2D6CF /* HudView.swift */; };
 		07EC89761B1360A400F2D6CF /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC89751B1360A400F2D6CF /* Functions.swift */; };
+		07EC89791B1406C900F2D6CF /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07EC89771B1406C900F2D6CF /* DataModel.xcdatamodeld */; };
+		07EC897B1B140A2100F2D6CF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC897A1B140A2100F2D6CF /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		07EC893C1B0F6A4A00F2D6CF /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		07EC89751B1360A400F2D6CF /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		07EC89781B1406C900F2D6CF /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		07EC897A1B140A2100F2D6CF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = MyLocations/Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		07E97D691B0ACD1900F4A946 = {
 			isa = PBXGroup;
 			children = (
+				07EC897A1B140A2100F2D6CF /* Location.swift */,
 				07E97D741B0ACD1900F4A946 /* MyLocations */,
 				07E97D8C1B0ACD1900F4A946 /* MyLocationsTests */,
 				07E97D731B0ACD1900F4A946 /* Products */,
@@ -92,6 +97,7 @@
 				07E97D7B1B0ACD1900F4A946 /* SecondViewController.swift */,
 				07E97D7D1B0ACD1900F4A946 /* Main.storyboard */,
 				07E97D991B0C454D00F4A946 /* LocationDetailsViewController.swift */,
+				07EC89771B1406C900F2D6CF /* DataModel.xcdatamodeld */,
 				07EC893C1B0F6A4A00F2D6CF /* HudView.swift */,
 				07EC89751B1360A400F2D6CF /* Functions.swift */,
 				07EC893A1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift */,
@@ -228,8 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E97D9A1B0C454D00F4A946 /* LocationDetailsViewController.swift in Sources */,
+				07EC89791B1406C900F2D6CF /* DataModel.xcdatamodeld in Sources */,
 				07E97D7C1B0ACD1900F4A946 /* SecondViewController.swift in Sources */,
 				07EC893D1B0F6A4A00F2D6CF /* HudView.swift in Sources */,
+				07EC897B1B140A2100F2D6CF /* Location.swift in Sources */,
 				07EC89761B1360A400F2D6CF /* Functions.swift in Sources */,
 				07E97D781B0ACD1900F4A946 /* AppDelegate.swift in Sources */,
 				07EC893B1B0D9D3C00F2D6CF /* CategoryPickerViewController.swift in Sources */,
@@ -441,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07EC89771B1406C900F2D6CF /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07EC89781B1406C900F2D6CF /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 07EC89781B1406C900F2D6CF /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07E97D6A1B0ACD1900F4A946 /* Project object */;
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationController: UIViewController, CLLocationManagerDelegate {
 
@@ -32,12 +33,15 @@ class CurrentLocationController: UIViewController, CLLocationManagerDelegate {
     
     var timer: NSTimer?
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TagLocation"{
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! LocationDetailsViewController
             controller.coordinate = location!.coordinate
             controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
         }
     }
     
