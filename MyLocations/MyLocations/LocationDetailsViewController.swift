@@ -86,6 +86,7 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
