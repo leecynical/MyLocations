@@ -34,6 +34,18 @@ class LocationDetailsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var date = NSDate()
     
+    var locationToEdit: Location? {
+        didSet{
+            if let location = locationToEdit { //optional binding
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                date = location.date
+                coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                placemark = location.placemark
+            }
+        }
+    }
+    
     //MARK: unwind segue
     
     @IBAction func categoryPickerViewController(segue: UIStoryboardSegue){
@@ -45,9 +57,15 @@ class LocationDetailsViewController: UITableViewController {
     
     @IBAction func done(sender: AnyObject) {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
-        hudView.text = "Tagged"
         
-        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        var location: Location
+        if let temp = locationToEdit{
+            hudView.text = "Updated"
+            location = temp
+        }else{
+            hudView.text = "Tagged"
+            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        }
         
         location.locationDescription = descriptionText
         location.longitude = coordinate.longitude
@@ -72,6 +90,10 @@ class LocationDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let location = locationToEdit{
+            title = "Edit Location"
+        }
         
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
