@@ -165,6 +165,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xvQ-fg-3Bi">
+                                                    <rect key="frame" x="135" y="11" width="144" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -283,10 +287,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="rdd-rW-pQr" id="w1F-sO-DW1"/>
                         <outlet property="addressLabel" destination="i6F-md-P8i" id="xax-c4-l1j"/>
                         <outlet property="categoryLabel" destination="Sm4-Ds-b8Y" id="3KT-Ve-24F"/>
                         <outlet property="dateLabel" destination="ahz-w2-0xF" id="Bho-yG-3ZH"/>
                         <outlet property="descriptionTextView" destination="eBi-St-ceu" id="btk-P6-4ky"/>
+                        <outlet property="imageView" destination="xvQ-fg-3Bi" id="h43-RN-SMi"/>
                         <outlet property="latitudeLabel" destination="9n1-jf-iSt" id="ria-h1-atH"/>
                         <outlet property="longitudeLabel" destination="S2U-l2-aMw" id="IRp-af-LGx"/>
                     </connections>
@@ -372,18 +378,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6X0-np-jHY">
-                                            <rect key="frame" x="8" y="8" width="88" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NV8-LM-POR">
-                                            <rect key="frame" x="8" y="31" width="53" height="17"/>
+                                            <rect key="frame" x="82" y="31" width="238" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JeZ-1w-kcR">
+                                            <rect key="frame" x="15" y="2" width="52" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6X0-np-jHY">
+                                            <rect key="frame" x="82" y="8" width="238" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -391,6 +401,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="NV8-LM-POR" id="TVS-8B-2AF"/>
                                     <outlet property="descriptionLabel" destination="6X0-np-jHY" id="vRe-MJ-TIM"/>
+                                    <outlet property="photoImageView" destination="JeZ-1w-kcR" id="o19-oA-uyd"/>
                                     <segue destination="f5p-qz-gSd" kind="modal" identifier="EditLocation" id="70N-h3-67C"/>
                                 </connections>
                             </tableViewCell>
@@ -500,6 +511,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bYv-CF-1pM"/>
+        <segue reference="70N-h3-67C"/>
     </inferredMetricsTieBreakers>
 </document>
