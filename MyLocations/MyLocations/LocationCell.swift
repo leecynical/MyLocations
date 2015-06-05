@@ -16,7 +16,28 @@ class LocationCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = UIColor.blackColor()
+        descriptionLabel.textColor = UIColor.whiteColor()
+        descriptionLabel.highlightedTextColor = descriptionLabel.textColor
+        addressLabel.textColor = UIColor(white: 1.0, alpha: 0.4)
+        addressLabel.highlightedTextColor = addressLabel.textColor
+        
+        let selectionView = UIView(frame: CGRect.zeroRect)
+        selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
+        selectedBackgroundView = selectionView
+        
+        photoImageView.layer.cornerRadius = photoImageView.bounds.width / 2
+        photoImageView.clipsToBounds = true // image conform to the bounds of cornerRadius
+        separatorInset = UIEdgeInsets(top: 0, left: 82, bottom: 0, right: 0)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let sv = superview{
+            descriptionLabel.frame.size.width = sv.frame.size.width - descriptionLabel.frame.origin.x - 10
+            addressLabel.frame.size.width = sv.frame.size.width - addressLabel.frame.origin.x - 10
+        }
     }
 
     func configureForLocation(location: Location) {
@@ -28,7 +49,11 @@ class LocationCell: UITableViewCell {
         }
         
         if let placemark = location.placemark{
-            addressLabel.text = "\(placemark.subThoroughfare) \(placemark.thoroughfare)," + "\(placemark.locality)"
+            var text = ""
+            text.addText(placemark.subThoroughfare)
+            text.addText(placemark.thoroughfare, withSeparator: " ")
+            text.addText(placemark.locality, withSeparator: ", ")
+            addressLabel.text = text
         }else {
             addressLabel.text = String(format: "Lat: %.8f, Long: %.8f", location.latitude, location.longitude)
         }
@@ -42,7 +67,7 @@ class LocationCell: UITableViewCell {
                 return image.resizedImageWithBounds(CGSize(width: 52, height: 52))
             }
         }
-        return UIImage()
+        return UIImage(named: "No Photo")!
     }
     
 }
